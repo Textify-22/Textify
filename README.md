@@ -10,13 +10,13 @@
 
 ## Features
 
-* In Textify you can modify your text as per your need.
+* In Textify, you can modify your text as per your need.
 * It allows you to `write` and even `record` your text.
-* By clicking start button you can record your text and then add it to preview section.
-* In the preview section you can even `copy` your text or can `print` it by click on copy and print icon respectively.
-* It also counts the number of words, characters and minutes to read.
+* By clicking start button you can record your text and then add it to the preview section.
+* In the preview section you can `copy` your text or even `print` it by clicking on copy and print icons respectively.
+* It also counts the Number of words, Characters and Minutes to read.
 
-Also the website has a favicon icon to enhance its UI and increase its authenticity.
+The website also has a favicon icon to enhance its UI and increase its authenticity.
 <img width="206" alt="faviconicon" src="https://user-images.githubusercontent.com/83106116/179543568-fb8b9338-8f91-4dbb-b206-2ea618f5e1a8.png">
 
 
