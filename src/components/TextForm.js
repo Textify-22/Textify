@@ -142,36 +142,8 @@ function TextForm(props) {
     setText(newText.join(" "));
   };
 
-  const Capitalize = () => {
-    let newText = output.split(/[.]+/);
-    let string;
-    let newstr = "";
-    console.log(newText.length);
-    if (newText.length > 1) {
-      for (let i = 0; i < newText.length - 1; i++) {
-        newText[i] = newText[i].trim();
-        if (newText[i][0] !== "") {
-          const str = newText[i];
-          {
-            str && (string = str[0].toUpperCase() + str.slice(1));
-          }
-          newstr += string + ". ";
-        }
-      }
-      console.log(newText[newText.length - 1]);
-      newText[newText.length - 1] = newText[newText.length - 1].trim();
-      if (newText[newText.length - 1] !== "") {
-        newstr +=
-          newText[newText.length - 1][0].toUpperCase() +
-          newText[newText.length - 1].slice(1);
-      }
-      setoutput(newstr);
-    } else if (newText !== "") {
-      newstr = newText[0][0].toUpperCase() + newText[0].slice(1);
-
-      setoutput(newstr);
-    }
-  };
+  const Capitalize = () => setoutput(output.replace(/(?<=(?:^|[.?!])\W*)[a-z]/g, i => i.toUpperCase()))
+  
   const Clear = () => {
     const newText = "";
     setText(newText);
