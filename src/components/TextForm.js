@@ -122,7 +122,7 @@ function TextForm(props) {
   };
   const handleOnChange = (event) => {
     setText(event.target.value);
-    setoutput(newNote + "\n" + event.target.value);
+    setoutput(event.target.value);
   };
   const ConvertToLo = () => {
     const newText = output.toLowerCase();
@@ -373,7 +373,7 @@ function TextForm(props) {
                 />
               </Tooltip>
               <hr style={{ height: "2px" }} />
-              <p style={{fontSize:'20px'}}>{note}</p>
+              <p style={{ fontSize: "20px" }}>{note}</p>
             </div>
             <div
               style={{
@@ -412,7 +412,11 @@ function TextForm(props) {
                 <Tooltip title="Clear All" arrow placement="top">
                   <ClearAllIcon
                     style={{ cursor: "pointer" }}
-                    onClick={() => {setoutput(""); setText("");setnote("")}}
+                    onClick={() => {
+                      setoutput("");
+                      setText("");
+                      setnote("");
+                    }}
                   />
                 </Tooltip>
                 &nbsp; &nbsp;
@@ -470,7 +474,7 @@ function TextForm(props) {
                   >
                     Words: &nbsp;
                     {
-                      (output).split(/\s+/).filter((element) => {
+                      output.split(/\s+/).filter((element) => {
                         return element.length !== 0;
                       }).length
                     }{" "}
@@ -481,7 +485,7 @@ function TextForm(props) {
                       fontFamily: "var(--quicksand)",
                     }}
                   >
-                    Characters: &nbsp; {(output).length}{" "}
+                    Characters: &nbsp; {output.length}{" "}
                   </ListGroup.Item>
                   <ListGroup.Item
                     style={{
@@ -491,7 +495,7 @@ function TextForm(props) {
                   >
                     Minutes Read: &nbsp;{" "}
                     {0.08 *
-                      (output).split(" ").filter((element) => {
+                      output.split(" ").filter((element) => {
                         return element.length !== 0;
                       }).length}{" "}
                   </ListGroup.Item>
