@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus&family=Joan&family=Nunito+Sans:wght@300&family=Poppins:wght@400;900&family=Play&family=Quicksand:wght@500&display=swap');
+:root{
+  --logo-bg:#BBAF92;
+  --logo-text:#66502C;
+  --btn-bg:#bbaf927a;
+  --body-bg:#66502cd4;
+  --poppins:'Poppins', sans-serif;
+  --quicksand:'Quicksand', sans-serif;
+  --nunito:'Nunito Sans', sans-serif;
+  --play:'Play', sans-serif;
+}
+
+.btn-primary:hover{
+  /* background-color: rgba(56, 27, 223, 0.918); */
+  background-color: var(--btn-bg) !important;
+  border: solid 2px black;
+}
+
+body{
+  background: linear-gradient(to left, #9a8478, #7a4422f0);
+}
+.contain{
+  padding: 10px;
+}
+.btn{
+  border-right: 2px solid var(--logo-bg);
+  font-family: var(--nunito);
+  font-weight:600;
+  font-size:16px;
+}
+@media (max-width: 1100px) {
+ .btn{
+  border: none;
+ }
+}
+.btn:hover{
+  background-color: var(--logo-bg);
+}
+.btnend{
+  border: none;
+}
