@@ -107,7 +107,12 @@ function TextForm(props) {
   const handleSaveNote = () => {
     setsaveNotes([...saveNotes, note]);
     setnote("");
-    setoutput(output + "\n" + note + "\n");
+    if(output.length>0){
+      setoutput(output + "\n" + note + "\n");
+    }
+    else{
+      setoutput(note);
+    }
   };
 
   let newNote = "";
@@ -122,7 +127,16 @@ function TextForm(props) {
   };
   const handleOnChange = (event) => {
     setText(event.target.value);
-    setoutput(event.target.value);
+    if(newNote.length>0){
+      if(newNote.slice(-1)!=="\n"){
+        setoutput(newNote + "\n" + event.target.value);
+      }
+      else{
+        setoutput(newNote + event.target.value);
+      }
+    }else{
+      setoutput(event.target.value);
+    }
   };
   const ConvertToLo = () => {
     const newText = output.toLowerCase();
@@ -485,7 +499,7 @@ function TextForm(props) {
                       fontFamily: "var(--quicksand)",
                     }}
                   >
-                    Characters: &nbsp; {output.length}{" "}
+                    Characters: &nbsp; {output.trim().length}{" "}
                   </ListGroup.Item>
                   <ListGroup.Item
                     style={{
